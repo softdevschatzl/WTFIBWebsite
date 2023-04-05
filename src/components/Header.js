@@ -1,18 +1,12 @@
 import React from 'react';
 import './Header.css';
+import WTFLogo from '../images/WTFlogo.jpeg';
 
 const Header = () => {
   return (
     <header className="header">
-      <div className="title-name-container">
-        <div className="bar-container">
-          <div className="bar" style={{animationDelay: '0s'}}></div>
-          <div className="middle-bar bar" style={{animationDelay: '0.5s'}}></div> {/* Add middle-bar class */}
-          <div className="bar" style={{animationDelay: '1s'}}></div>
-        </div>
-        <div className="brand">
-          <h1>TFIB</h1>
-        </div>
+      <div className="brand">
+        <img className="logo" src={WTFLogo} alt = "WTFLogo"></img>
       </div>
       <nav className="navbar">
         <ul>

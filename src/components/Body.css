@@ -1,0 +1,51 @@
+/* The brandname object. */
+.title-name-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.brand {
+    font-size: 24px;
+    color: #fff;
+    /* padding: 0 10px; */
+    position: relative;
+}
+
+/* Achieving the VU Meter effect. */
+.bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 40px;
+    height: 50px;
+    /* padding: 0 10px; */
+    margin-right: 5px;
+    padding-top: 20px;
+}
+.bar {
+    width: 10px;
+    background-color: #fff;
+    animation: vuMeter 2s infinite ease-in-out;
+}
+.middle-bar {
+    width: 10px;
+    background: #fff;
+    animation: middleVuMeter 2s infinite ease-in-out;
+}
+@keyframes middleVuMeter {
+    0%, 100% {
+        height: 10%;
+    }
+    50% {
+        height: 80%;
+    }
+}
+@keyframes vuMeter {
+    0%, 100% {
+      height: 20%;
+    }
+    50% {
+      height: 100%;
+    }
+}
