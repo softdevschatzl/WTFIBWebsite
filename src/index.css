@@ -1,5 +1,11 @@
+@font-face {
+    font-family: "Summer";
+    src: url("../public/fonts/SummerLight-lrAX.otf") format("opentype"),
+         url("../public/fonts/Summer-GpYG.otf") format("opentype");
+}
+
 body {
-    background-image: url('../images/background.jpg');
+    background-image: url('./images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
