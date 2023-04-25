@@ -1,5 +1,6 @@
 import React from 'react';
-import './Body.css';
+import Socials from './Socials';
+import './BrandName.css';
 
 function Body() {
   return (
@@ -10,6 +11,7 @@ function Body() {
           <div className="middle-bar bar" style={{animationDelay: '0.5s'}}></div>
           <div className="bar" style={{animationDelay: '1s'}}></div>
         </div>Y</h1>
+        <Socials />
       </div>
     </div>
   );

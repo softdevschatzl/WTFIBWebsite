@@ -6,7 +6,7 @@
     font-family: Verdana, sans-serif;
 }
 .brand {
-    margin-left: 30px;
+    margin-left: 50px;
     align-items: center;
 }
 .logo {
@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     margin: auto;
+    justify-content: space-between;
 }
   
 .navbar ul {

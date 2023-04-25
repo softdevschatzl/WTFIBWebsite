@@ -1,12 +1,14 @@
 import './App.css';
 import Header from './components/Header.js'
-import Body from './components/Body.js'
+import BrandName from './components/BrandName.js'
+import WTFIBeats from './components/Beats';
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Body></Body>
+      <Header />
+      <BrandName />
+      <WTFIBeats />
     </div>
   );
 }
