@@ -3,6 +3,7 @@ h1 {
     align-items: center;
     font-family: "Summer", sans-serif;
 }
+
 /* The brandname object. */
 .title-name-container {
     display: flex;

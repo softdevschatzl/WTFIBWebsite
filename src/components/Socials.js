@@ -8,13 +8,19 @@ function Socials() {
   return (
     <div className="navbar">
       <div className="nav-item">
-        <img className="social-image" src={Beatstars} alt="Beatstars" />
+        <a href="https://whothefuckisbilly.beatstars.com/" target="_blank">
+          <img className="social-image" src={Beatstars} alt="Beatstars" />
+        </a>
       </div>
       <div className="nav-item">
-        <img className="social-image" src={Tiktok} alt="Tiktok" />
+        <a href="https://www.tiktok.com/@whothefuckisbilly" target="_blank">
+          <img className="social-image" src={Tiktok} alt="Tiktok" />
+        </a>
       </div>
       <div className="nav-item">
-        <img className="social-image" src={Instagram} alt="Instagram" />
+        <a href="https://www.instagram.com/whothefuckisbilly/?hl=en" target="_blank">
+          <img className="social-image" src={Instagram} alt="Instagram" />
+        </a>
       </div>
     </div>
   );

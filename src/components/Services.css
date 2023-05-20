@@ -1,0 +1,45 @@
+.services {
+    padding: 50px 0;
+    background-image: url('../images/services.png');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+.services-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service {
+    width: 40%;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #505050;
+    margin-bottom: 20px;
+}
+
+.service h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.service p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .service {
+        width: 80%;
+    }
+}
