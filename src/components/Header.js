@@ -4,9 +4,13 @@ import './Header.css';
 import WTFLogo from '../images/WTFlogo.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import beatCartImage from '../images/white_music_note.png';
+import beatCartImage from '../images/musicnote.svg';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Header = (props) => {
+  // Mobile code
+  const [navOpen, setNavOpen] = useState(false);
+
   const cartRef = useRef(null);
   const cartIconRef = useRef(null);
   
@@ -39,7 +43,11 @@ const Header = (props) => {
       <div className="brand">
         <img className="logo" src={WTFLogo} alt = "WTFLogo"></img>
       </div>
-      <nav className="navbar">
+      <GiHamburgerMenu 
+        className='hamburger' 
+        onClick={() => setNavOpen(!navOpen)}
+      />
+      <nav className="navbar ${navOpen ? 'open' : ''}">
         <ul>
           <li>
             <Link
@@ -107,7 +115,7 @@ const Cart = forwardRef(({ cart, className, clearCart }, ref) => {
       <ul className="header-cart-items">
         {cart.map((item, index) => (
           <li key={index}>
-            <img src = {beatCartImage} alt='Beat' style={{ width: '20px', height: '20px', marginRight: '5px'}} />
+            <img src = {beatCartImage} alt='Beat' style={{ width: '20px', height: '20px', marginRight: '10px'}} />
             {item.name} - ${item.price}
           </li>
         ))}

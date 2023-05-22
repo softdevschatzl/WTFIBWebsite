@@ -18,7 +18,7 @@ function Socials() {
         </a>
       </div>
       <div className="nav-item">
-        <a href="https://www.instagram.com/whothefuckisbilly/?hl=en" target="_blank">
+        <a href="https://www.instagram.com/prodby.wtfib/" target="_blank">
           <img className="social-image" src={Instagram} alt="Instagram" />
         </a>
       </div>
