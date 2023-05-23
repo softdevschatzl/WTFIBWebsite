@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import shareIcon from '../images/share-solid.svg';
 import WaveSurfer from 'wavesurfer.js';
+import upArrows from '../images/uparrow.png';
 
 function WTFIBeats({ setCart }) {
 
@@ -26,7 +27,10 @@ function WTFIBeats({ setCart }) {
     }
   })
 
+  // For actually rendering the player.
   const [showPlayer, setShowPlayer] = useState(false);
+  // For minimizing the player.
+  const [isPlayerVisible, setPlayerVisible] = useState(true);
 
   useLayoutEffect(() => {
     if (showPlayer) {
@@ -155,8 +159,13 @@ function WTFIBeats({ setCart }) {
           </p>
         </div>
       </div>
+
+      {/* Audio player */}
       {showPlayer && (
-        <div id='waveform' className='sticky-waveform'>
+        <div id='waveform' className={`sticky-waveform ${isPlayerVisible ? '' : 'minimized'}`}>
+          <button className="arrow-button" onClick={(e) => { e.stopPropagation(); setPlayerVisible(!isPlayerVisible); }}>
+            {/* <img src={upArrows} alt='Up'></img> */}
+          </button>
           <img src={beatCover} alt='beat' className='waveform-beat-cover'/>
           <p className='waveform-beat-title'>{currentBeat.name}</p> {/* Placeholder */}
           <input type='range' id='volume' name='volume' min='0' max='1' step='0.1' onChange = {changeVolume} className='waveform-volume-slider' />

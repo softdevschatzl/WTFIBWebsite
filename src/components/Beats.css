@@ -115,11 +115,13 @@ h3 {
     padding: 10px;
     z-index: 999;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: transform 0.5s ease-in-out;
 }
 
 .waveform-content {
     flex-grow: 1;
     margin-right: 10px;
+    width: auto;
 }
   
 .waveform-beat-cover {
@@ -168,6 +170,27 @@ h3 {
 .waveform-volume-slider::-moz-range-thumb {
     background: purple;
     cursor: pointer;
+}
+.arrow-button {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #3d3d3d;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* The following styles are for creating a triangular arrow. Adjust as needed. */
+    clip-path: polygon(50% 60%, 0% 100%, 100% 100%);
+}
+.sticky-waveform.minimized {
+    transform: translateY(calc(100% - 40px));
+    transition: transform 0.5s ease-in-out;
+}
+.sticky-waveform.minimized .arrowhead-button {
+    transform: rotate(180deg);
 }
 
 .audio-container {
@@ -246,8 +269,36 @@ h3 {
     margin-right: 5px;
 }
 
-@media screen and (max-width: 968) {
+@media screen and (max-width: 968px) {
     .beats-container {
         width: 100%;
+    }
+
+    .beat-tags p {
+        display: none;
+    }
+
+    .share-price-container {
+        display: none;
+    }
+
+    .sticky-waveform {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .waveform-beat-title {
+        width: auto;
+        font-size: 20px;
+    }
+
+    .waveform-beat-cover {
+        margin: 0;
+        width: 50px;
+        height: 50px;
+    }
+
+    .sticky-waveform.minimized {
+        transform: translateY(calc(100% - 25px));
     }
 }
