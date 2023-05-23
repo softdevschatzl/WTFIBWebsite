@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header cart={cart} />
+      <Header cart={cart} style={{position: 'sticky', top: '0', zIndex: 1000}} />
       <BrandName />
       <WTFIBeats setCart={setCart} clearCart={clearCart} />
       <Pricing />

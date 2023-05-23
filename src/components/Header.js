@@ -38,94 +38,113 @@ const Header = (props) => {
     };
   }, [cartVisible]);
 
-  return (
-    <header className="header">
-      <div className="brand">
-        <img className="logo" src={WTFLogo} alt = "WTFLogo"></img>
-      </div>
-      <GiHamburgerMenu 
-        className='hamburger' 
-        onClick={() => setNavOpen(!navOpen)}
-      />
-      <nav className="navbar ${navOpen ? 'open' : ''}">
-        <ul>
-          <li>
-            <Link
-              activeClass='active'
-              to='beats'
-              spy={true}
-              smooth={true}
-              offset={-150}
-              duration={500}>Beats</Link>
-          </li>
-          <li>
-            <Link
-              activeClass='active'
-              to='pricing'
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}>Pricing</Link>
-          </li>
-          <li>
-            <Link
-              activeClass='active'
-              to='services'
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}>Services</Link>
-          </li>
-          <li>
-            <Link
-              activeClass='active'
-              to='contact'
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}>Contact</Link>
-          </li>
-        </ul>
-      </nav>
-      <div className="cart-container" onClick={toggleCartVisibility} ref={cartIconRef}>
-        <FontAwesomeIcon icon={faShoppingCart} className="header-cart-icon" />
-        <Cart cart={props.cart} className={`header-cart-dropdown ${cartVisible ? 'visible' : ''}`} 
-        clearCart = {props.clearCart} 
-        ref={cartRef} />
-      </div>
-    </header>
-  );
-};
-
-const Cart = forwardRef(({ cart, className, clearCart }, ref) => {
-  const totalPrice = cart.reduce((acc, item) => acc + 20, 0);
-  const numberOfItems = cart.length;
-
-  useEffect(() => {
-    if (className.includes('visible')) {
-      setTimeout(() => {
-        ref.current.classList.add('slide-in');
-      }, 10);
+  // Mobile navbar click listener.
+  const navRef = useRef(null);
+  const outsideClickListener = (event) => {
+    if (!navRef.current.contains(event.target) && navRef.current) {
+      // Anywhere outside the navbar is clicked.
+      setNavOpen(false);
     }
-  }, [className, ref]);
+  };
+  useEffect(() => {
+    document.addEventListener('click', outsideClickListener);
+    return () => {
+      document.removeEventListener('click', outsideClickListener);
+    };
+  }, []);
+  const Header = (props) => {
+    return (
+      <header className="header">
+        <GiHamburgerMenu 
+          className='hamburger' 
+          onClick={(event) => {
+            event.stopPropagation();
+            setNavOpen(!navOpen);
+          }}
+        />
+        <div className="header-brand">
+          <img className="logo" src={WTFLogo} alt = "WTFLogo"></img>
+        </div>
+        <nav ref={navRef} className={`header-navbar ${navOpen ? 'open' : ''}`}>
+          <ul>
+            <li>
+              <Link
+                activeClass='active'
+                to='beats'
+                spy={true}
+                smooth={true}
+                offset={-150}
+                duration={500}>Beats</Link>
+            </li>
+            <li>
+              <Link
+                activeClass='active'
+                to='pricing'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>Pricing</Link>
+            </li>
+            <li>
+              <Link
+                activeClass='active'
+                to='services'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>Services</Link>
+            </li>
+            <li>
+              <Link
+                activeClass='active'
+                to='contact'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>Contact</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="cart-container" onClick={toggleCartVisibility} ref={cartIconRef}>
+          <FontAwesomeIcon icon={faShoppingCart} className="header-cart-icon" />
+          <Cart cart={props.cart} className={`header-cart-dropdown ${cartVisible ? 'visible' : ''}`} 
+          clearCart = {props.clearCart} 
+          ref={cartRef} />
+        </div>
+      </header>
+    );
+  };
 
-  return (
-    <div className={className} ref = {ref}>
-      <p className='header-cart-item-count'>Items: {numberOfItems}</p>
-      <ul className="header-cart-items">
-        {cart.map((item, index) => (
-          <li key={index}>
-            <img src = {beatCartImage} alt='Beat' style={{ width: '20px', height: '20px', marginRight: '10px'}} />
-            {item.name} - ${item.price}
-          </li>
-        ))}
-      </ul>
-      <p className="header-cart-total">Subtotal: ${totalPrice}</p>
-      <button className='header-cart-checkout'>Checkout</button>
-      <button className='header-cart-clear' onClick={clearCart}>Clear Cart</button>
-    </div>
-  );
-});
+  const Cart = forwardRef(({ cart, className, clearCart }, ref) => {
+    const totalPrice = cart.reduce((acc, item) => acc + 20, 0);
+    const numberOfItems = cart.length;
+
+    useEffect(() => {
+      if (className.includes('visible')) {
+        setTimeout(() => {
+          ref.current.classList.add('slide-in');
+        }, 10);
+      }
+    }, [className, ref]);
+
+    return (
+      <div className={className} ref = {ref}>
+        <p className='header-cart-item-count'>Items: {numberOfItems}</p>
+        <ul className="header-cart-items">
+          {cart.map((item, index) => (
+            <li key={index}>
+              <img src = {beatCartImage} alt='Beat' style={{ width: '20px', height: '20px', marginRight: '10px'}} />
+              {item.name} - ${item.price}
+            </li>
+          ))}
+        </ul>
+        <p className="header-cart-total">Subtotal: ${totalPrice}</p>
+        <button className='header-cart-checkout'>Checkout</button>
+        <button className='header-cart-clear' onClick={clearCart}>Clear Cart</button>
+      </div>
+    );
+  });
+};
 
 
 export default Header;
