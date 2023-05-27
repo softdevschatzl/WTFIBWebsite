@@ -25,11 +25,25 @@
   margin-top: 20px;
 }
 
+.plan-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.displayed-plans {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .plan {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   width: 300px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -40,6 +54,13 @@
   animation-name: slideInFromLeft;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+}
+.plan p {
+  font-size: 20px;
+  color: #fff;
+}
+.unlim {
+  background-color: #290d44
 }
 
 .pricing-price {
@@ -57,8 +78,8 @@
 }
 
 .subscribe-btn {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #ffffff;
+  color: black;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -67,7 +88,7 @@
 }
 
 .subscribe-btn:hover {
-  background-color: #0056b3;
+  background-color: #b8b8b8;
 }
 
 h4 {

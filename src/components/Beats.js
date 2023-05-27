@@ -170,7 +170,7 @@ function WTFIBeats({ setCart }) {
           <p className='waveform-beat-title'>{currentBeat.name}</p> {/* Placeholder */}
           <input type='range' id='volume' name='volume' min='0' max='1' step='0.1' onChange = {changeVolume} className='waveform-volume-slider' />
           <div className='waveform-content' onClick={() => waveSurfer.current.playPause()} />
-          <button className='waveform-share'><img src={shareIcon} alt='Share' /></button>
+          <button className='beat-share'><img src={shareIcon} alt='Share' /></button>
           <button className="price-button" onClick={(e) => { e.stopPropagation(); addToCart(beat.name); }}>
             <span className="cart-icon">
               <FontAwesomeIcon icon={faShoppingCart} />
