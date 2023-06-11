@@ -10,7 +10,7 @@
 }
 
 .pricing {
-  background-color: rgb(50, 50, 50);
+  background-color: #222;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,8 +27,10 @@
 
 .plan-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  flex-direction: row;
   align-items: center;
+  width: 100%;
 }
 
 .displayed-plans {
@@ -40,11 +42,13 @@
 
 .plan {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #505050;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 300px;
+  height: 250px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -60,7 +64,7 @@
   color: #fff;
 }
 .unlim {
-  background-color: #290d44
+  background-color: #290d44;
 }
 
 .pricing-price {

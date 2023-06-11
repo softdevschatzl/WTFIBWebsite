@@ -9,11 +9,16 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import shareIcon from '../images/share-solid.svg';
 import WaveSurfer from 'wavesurfer.js';
 import upArrows from '../images/uparrow.png';
+import fastForward from '../images/forward-solid.svg';
+import play from '../images/play-solid.svg';
+import pause from '../images/pause-solid.svg';
+import rewind from '../images/backward-solid.svg';
 
 function WTFIBeats({ setCart }) {
 
   const [currentBeat, setCurrentBeat] = useState(null);
   const waveSurfer = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [beats, setBeats] = useState([
     { name: 'Cerberus', path: Cerberus, bpm: 188, tags: ['BABYTRON', 'BLPKOSHER'], length: null },
     { name: 'H20', path: H20, bpm: 194, tags: ['BABYTRON'], length: null },
@@ -44,12 +49,15 @@ function WTFIBeats({ setCart }) {
         height: 50,
         responsive: true,
       });
+
+      // Initialize the volume to half because it was too loud and jarring.
+      waveSurfer.current.setVolume(0.5);
   
       waveSurfer.current.on('ready', function () {
         waveSurfer.current.play();
       });
   
-      // Load the sound file after WaveSurfer is fully initialized
+      // Load the sound file after WaveSurfer is fully initialized.
       if (currentBeat) {
         waveSurfer.current.load(currentBeat.path);
       }
@@ -64,14 +72,35 @@ function WTFIBeats({ setCart }) {
     if (currentBeat === beat) {
       if (waveSurfer.current.isPlaying()) {
         waveSurfer.current.pause();
+        setIsPlaying(false);
       } else {
         waveSurfer.current.play();
+        setIsPlaying(true);
       }
     } else {
       setShowPlayer(true);
       setCurrentBeat(beat);
+      setIsPlaying(true);
     }
   }
+
+  const handlePlayPause = () => {
+    if (waveSurfer.current.isPlaying()) {
+      waveSurfer.current.pause();
+      setIsPlaying(false);
+    } else {
+      waveSurfer.current.play();
+      setIsPlaying(true);
+    }
+  }
+  
+  useEffect(() => {
+    if (waveSurfer.current) {
+      waveSurfer.current.on('finish', function () {
+        setIsPlaying(false);
+      });
+    }
+  }, [waveSurfer.current]);
 
   useEffect(() => {
     const promises = beats.map(beat => {
@@ -113,6 +142,25 @@ function WTFIBeats({ setCart }) {
     waveSurfer.current.setVolume(volume);
   }
 
+  // useEffect(() => {
+  //   const handleClickOutsidePlayer = (event) => {
+  //     if (!document.getElementById('waveform').contains(event.target)) {
+  //       setPlayerVisible(false);
+  //     }
+  //   }
+
+  //   document.addEventListener('click', handleClickOutsidePlayer);
+
+  //   return () => {
+  //     document.removeEventListener('click', handleClickOutsidePlayer);
+  //   };
+  // }, []);
+
+  // const handlePlayerHeaderClick = (event) => {
+  //   event.stopPropagation();
+  //   setPlayerVisible(true)
+  // }
+
   return (
     <div className ='beats'>
       <div className='beat-info-container'>
@@ -124,7 +172,7 @@ function WTFIBeats({ setCart }) {
           </p>
         </div>
         <ul className ='audio-section'>
-          <h2>WTFIB Beats:</h2>
+          <h2>Beats:</h2>
           <div className='beats-container'>
             {beats.map((beat, index) => (
               <li className='ind-beat' key={index} onClick={() => handlePlayBeat(beat)}>
@@ -168,15 +216,29 @@ function WTFIBeats({ setCart }) {
           </button>
           <img src={beatCover} alt='beat' className='waveform-beat-cover'/>
           <p className='waveform-beat-title'>{currentBeat.name}</p> {/* Placeholder */}
-          <input type='range' id='volume' name='volume' min='0' max='1' step='0.1' onChange = {changeVolume} className='waveform-volume-slider' />
+          <input type='range' id='volume' name='volume' min='0' max='1' step='0.1' onChange = {changeVolume} className='waveform-volume-slider' defaultValue='0.5' />
           <div className='waveform-content' onClick={() => waveSurfer.current.playPause()} />
-          <button className='beat-share'><img src={shareIcon} alt='Share' /></button>
-          <button className="price-button" onClick={(e) => { e.stopPropagation(); addToCart(beat.name); }}>
-            <span className="cart-icon">
-              <FontAwesomeIcon icon={faShoppingCart} />
-            </span>
-            <span className="price-text">ADD</span>
-          </button>
+          <div className='audio-controls'>
+            <button className="rewind"> <img src={rewind} alt='Rewind'></img> </button>
+            <button className="play-pause" 
+              onClick={handlePlayPause}>
+              <img 
+                className ='audio-control-image' 
+                src={isPlaying ? pause : play} 
+                alt={isPlaying ? 'Pause' : 'Play'}
+              />
+            </button>
+            <button className="fast-forward"> <img className='audio-control-image' src={fastForward} alt='Fast Forward' /> </button>
+          </div>
+          <div className='price-share-container'>
+            <button className='beat-share'><img className='audio-control-image' src={shareIcon} alt='Share' /></button>
+            <button className="price-button" onClick={(e) => { e.stopPropagation(); addToCart(currentBeat.name); }}>
+              <span className="cart-icon">
+                <FontAwesomeIcon icon={faShoppingCart} />
+              </span>
+              <span className="price-text">ADD</span>
+            </button>
+          </div>
         </div>
       )}
     </div>

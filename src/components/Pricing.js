@@ -23,9 +23,9 @@ const Pricing = () => {
   const limitedPlansButtonRef = useRef(null);
   const unlimitedPlansButtonRef = useRef(null);
 
-  // Adds functionality for the fade/slide in animations
-  const limitedPlanRefs = useRef([]);
-  const unlimitedPlanRefs = useRef([]);
+  // // Adds functionality for the fade/slide in animations
+  // const limitedPlanRefs = useRef([]);
+  // const unlimitedPlanRefs = useRef([]);
 
   const planRefs = useRef([]);
 
@@ -93,12 +93,6 @@ const Pricing = () => {
               }}
             >View</button>
           </div>
-          <div className="displayed-plans">
-            {showLimitedPlans && renderPlans(limitedPlans, shouldAnimateLimited)}
-          </div>
-        </div>
-
-        <div className="plan-container">
           <div 
             className="unlim plan"
             ref={unlimitedPlansButtonRef}
@@ -117,7 +111,12 @@ const Pricing = () => {
               }}
             >View</button>
           </div>
-          <div className="displayed-plans">
+        </div>
+        <div className="displayed-plan-container">
+          <div className="displayed-plans limited-plans">
+            {showLimitedPlans && renderPlans(limitedPlans, shouldAnimateLimited)}
+          </div>
+          <div className="displayed-plans unlimited-plans">
             {showUnlimitedPlans && renderPlans(unlimitedPlans, shouldAnimateUnlimited)}
           </div>
         </div>
