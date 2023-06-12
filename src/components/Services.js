@@ -5,7 +5,7 @@ const Services = () => {
     return (
         <div className='services' id='services'>
             <h2 className='services-title'>Services</h2>
-            <div className='services-container'>
+            <div className='services-container hidden'>
                 <div className='service service-mixing'>
                     <h3>Mixing</h3>
                     <p>

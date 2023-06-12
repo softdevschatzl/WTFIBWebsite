@@ -79,7 +79,7 @@ const Pricing = () => {
     <div className="pricing">
       <h2>Licensing Options</h2>
       <div className="pricing-plans">
-        <div className="plan-container">
+        <div className="plan-container hidden">
           <div 
             className="persistent plan"
             ref={limitedPlansButtonRef}

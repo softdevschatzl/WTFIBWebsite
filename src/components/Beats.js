@@ -173,7 +173,7 @@ function WTFIBeats({ setCart }) {
         </div>
         <ul className ='audio-section'>
           <h2>Beats:</h2>
-          <div className='beats-container'>
+          <div className='beats-container hidden'>
             {beats.map((beat, index) => (
               <li className='ind-beat' key={index} onClick={() => handlePlayBeat(beat)}>
                 <img src = {beatCover} alt = 'beat' className='beat-cover' />

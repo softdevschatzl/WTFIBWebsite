@@ -1,0 +1,47 @@
+/* Funny little css animation rules */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.hide-fade-in {
+    opacity: 0;
+    transition: all 1s;
+}
+.fade-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+  }
+
+.slide-from-left {
+    opacity: 0;
+    animation-name: slideInFromLeft;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
