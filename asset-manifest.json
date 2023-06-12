@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.758e93fb.css",
+    "main.js": "/static/js/main.b432858f.js",
+    "static/js/45.61451ff6.chunk.js": "/static/js/45.61451ff6.chunk.js",
+    "static/media/H20_194BPM.mp3": "/static/media/H20_194BPM.914d0fccc25092eac29e.mp3",
+    "static/media/Manic_182BPM.mp3": "/static/media/Manic_182BPM.7e3e301a2d78618bcae7.mp3",
+    "static/media/Cerberus_188BPM.mp3": "/static/media/Cerberus_188BPM.1bd81733902f7a301eee.mp3",
+    "static/media/AbsurdWorldDemoRegular.ttf": "/static/media/AbsurdWorldDemoRegular.b8341544dc2569180009.ttf",
+    "static/media/SummerLight-lrAX.otf": "/static/media/SummerLight-lrAX.08e2d93dd1d5ac6a0df5.otf",
+    "static/media/instagramlogo.png": "/static/media/instagramlogo.5dbf3b974f8c74b45c00.png",
+    "static/media/WTFlogo.jpeg": "/static/media/WTFlogo.97626566d369d5969886.jpeg",
+    "static/media/Summer-GpYG.otf": "/static/media/Summer-GpYG.2371e38c42b29a23b1f1.otf",
+    "static/media/tiktoklogo.png": "/static/media/tiktoklogo.01102ba741e9f3f85b7b.png",
+    "static/media/beatstarslogo.png": "/static/media/beatstarslogo.d387b91f66292b2ada1b.png",
+    "static/media/soundcloud-svgrepo-com.svg": "/static/media/soundcloud-svgrepo-com.307264b8b5737c6724b3875a72878c32.svg",
+    "static/media/youtube.svg": "/static/media/youtube.8e52ca62094c3c2de33b9aee16771980.svg",
+    "static/media/musicnote.svg": "/static/media/musicnote.cc72ec5153823596d5c1ce8282fd2fa5.svg",
+    "index.html": "/index.html",
+    "static/media/share-solid.svg": "/static/media/share-solid.6555c7f37a662e9c353a61f81a474f03.svg",
+    "static/media/backward-solid.svg": "/static/media/backward-solid.438057baab3f101a2ff8797f244821e2.svg",
+    "static/media/forward-solid.svg": "/static/media/forward-solid.9a8a5c69e12f8513349ce88fb9e1f217.svg",
+    "static/media/pause-solid.svg": "/static/media/pause-solid.8f2b2e2b2bfe6385b82f36ba16e275c1.svg",
+    "static/media/play-solid.svg": "/static/media/play-solid.457675025692cbb949620786ae879717.svg",
+    "main.758e93fb.css.map": "/static/css/main.758e93fb.css.map",
+    "main.b432858f.js.map": "/static/js/main.b432858f.js.map",
+    "45.61451ff6.chunk.js.map": "/static/js/45.61451ff6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.758e93fb.css",
+    "static/js/main.b432858f.js"
+  ]
+}
