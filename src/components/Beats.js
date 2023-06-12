@@ -216,7 +216,7 @@ function WTFIBeats({ setCart }) {
           </button>
           <img src={beatCover} alt='beat' className='waveform-beat-cover'/>
           <p className='waveform-beat-title'>{currentBeat.name}</p> {/* Placeholder */}
-          <input type='range' id='volume' name='volume' min='0' max='1' step='0.1' onChange = {changeVolume} className='waveform-volume-slider' defaultValue='0.5' />
+          <input type='range' id='volume' name='volume' min='0' max='2' step='0.1' onChange = {changeVolume} className='waveform-volume-slider' defaultValue='0.5' />
           <div className='waveform-content' onClick={() => waveSurfer.current.playPause()} />
           <div className='audio-controls'>
             <button className="rewind"> <img src={rewind} alt='Rewind'></img> </button>

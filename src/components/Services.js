@@ -14,6 +14,7 @@ const Services = () => {
                         your music style, taking care of every aspect that
                         you want to pop out in your music.
                     </p>
+                    <button className='subscribe-btn'>LEARN MORE</button>
                 </div>
                 <div className='service service-mastering'>
                     <h3>Mastering</h3>
@@ -24,6 +25,7 @@ const Services = () => {
                         compression and limiting, to achieve a consistent 
                         and competitive sound.
                     </p>
+                    <button className='subscribe-btn'>LEARN MORE</button>
                 </div>
             </div>
         </div>

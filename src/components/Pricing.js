@@ -6,7 +6,7 @@ const Pricing = () => {
   const limitedPlans = [
     { id: 1, name: 'Tagged MP3', price: 20, features: ['- Unlimited FREE downloads', '- 500K Audio Streams, Allowed Profit Performance'], bgColor: '#505050' },
     { id: 2, name: 'Untagged Limited', price: 40, features: ['- 500000 Audio Streams', '- 500000 Non-Monetized Video Streams', '- Broadcasting for up to 2 radio stations'], bgColor: '#505050' },
-    { id: 3, name: 'Stems Limited', price: 60, features: ['- 500000 Audio Streams', '- 500000 Non-Monetized Video Streams', '- Broadcasting rights for up to 2 different radio stations'], bgColor: '#505050' },
+    { id: 3, name: 'Stems Limited', price: 60, features: ['- 500000 Audio Streams', '- 500000 Non-Monetized Video Streams', '- Broadcasting for up to 2 radio stations'], bgColor: '#505050' },
   ]
   const unlimitedPlans = [
     { id: 1, name: 'Unlimited Stems', price: 100, features: ['- Unlimited Distribution and Streaming Rights', '- Untagged WAV/MP3 and Track Stems'], bgColor: '#290d44' } ,
@@ -52,12 +52,17 @@ const Pricing = () => {
   }, []);
 
   const renderPlans = (plans, shouldAnimate) => {
-    return plans.map((plan, index) => (
+    const reversedPlans = [...plans].reverse(); // Reversing the plans for the slide-in.
+    return reversedPlans.map((plan, index) => (
       <div 
         key={plan.id} 
         // ref={(el) => (refs.current[index] = el)}
         className={`plan ${shouldAnimate ? 'animate' : ''}`}
-        style={{ backgroundColor: plan.bgColor }}> 
+        style={{ 
+          backgroundColor: plan.bgColor, 
+          animationDelay: `${index * 0.2}s`,
+          animationDuration: `${plans.length * 0.5}s`
+          }}> 
           <h4>{plan.name}</h4>
           <p className="pricing-price">${plan.price}</p>
           <ul className="features">
@@ -76,7 +81,7 @@ const Pricing = () => {
       <div className="pricing-plans">
         <div className="plan-container">
           <div 
-            className="plan"
+            className="persistent plan"
             ref={limitedPlansButtonRef}
           >
             <h4>Limited Plans</h4>
@@ -94,7 +99,7 @@ const Pricing = () => {
             >View</button>
           </div>
           <div 
-            className="unlim plan"
+            className="persistent unlim plan"
             ref={unlimitedPlansButtonRef}
           >
             <h4>Unlimited Plans</h4>

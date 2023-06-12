@@ -19,7 +19,7 @@
 
 .pricing-plans {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   width: 100%;
   margin-top: 20px;
@@ -35,7 +35,7 @@
 
 .displayed-plans {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -56,7 +56,7 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
   opacity: 0;
   animation-name: slideInFromLeft;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
 .plan p {
@@ -102,5 +102,14 @@ h4 {
   color: #fff;
   font-family: "Summer", sans-serif;
   font-size: 25px;
+}
+
+@media screen and (max-width: 700px) {
+  .persistent p {
+    font-size: 16px;
+  }
+  .plan-container {
+    flex-direction: column;
+  }
 }
   
