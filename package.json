@@ -18,9 +18,9 @@
     "wavesurfer.js": "^6.6.3",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://theschatzinator.github.io/WTFIBWebsite",
+  "homepage": "http://theschatzinator.github.io/WTFIBWebsite",
   "scripts": {
-    "predeploy": "yarn build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
