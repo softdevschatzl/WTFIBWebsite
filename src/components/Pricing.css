@@ -112,5 +112,9 @@ h4 {
   .plan-container {
     flex-direction: column;
   }
+  .pricing-plans {
+    display: flex;
+    flex-direction: column;
+  }
 }
   
