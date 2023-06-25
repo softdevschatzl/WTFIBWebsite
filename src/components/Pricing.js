@@ -83,6 +83,7 @@ const Pricing = () => {
           <div 
             className="persistent plan"
             ref={limitedPlansButtonRef}
+            style={{ display: showUnlimitedPlans ? 'none' : 'flex' }}
           >
             <h4>Limited Plans</h4>
             <p>Our budget-friendly plans, when you're looking for tracks to help you get
@@ -96,11 +97,12 @@ const Pricing = () => {
                 setShowUnlimitedPlans(false);
                 setTimeout(() => setShouldAnimateLimited(false), 1000); // Resets after 1 second.
               }}
-            >View</button>
+            >{showLimitedPlans ? 'Close' : 'View'}</button>
           </div>
           <div 
             className="persistent unlim plan"
             ref={unlimitedPlansButtonRef}
+            style={{ display: showLimitedPlans ? 'none' : 'flex' }}
           >
             <h4>Unlimited Plans</h4>
             <p>When you're looking for options that fit every need of your
@@ -114,7 +116,7 @@ const Pricing = () => {
                 setShowLimitedPlans(false);
                 setTimeout(() => setShouldAnimateLimited(false), 1000); // Resets after 1 second. 
               }}
-            >View</button>
+            >{showUnlimitedPlans ? 'Close' : 'View'}</button>
           </div>
         </div>
         <div className="displayed-plan-container">

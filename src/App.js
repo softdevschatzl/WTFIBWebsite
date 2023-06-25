@@ -7,10 +7,11 @@ import Pricing from './components/Pricing.js';
 import Services from './components/Services.js';
 import Contact from './components/Contact.js';
 import backgroundVideo from './images/brand-background.mp4';
+import backgroundImage from './images/background.jpg';
 
 function App() {
 
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 1000;
   // 6/20/23 find a new way to detect mobiles, change background video to image.
   
   const [cart, setCart] = useState([]);
@@ -51,10 +52,14 @@ function App() {
   return (
     <div className="App">
       <div className='video-background'>
-        <video className='video-background' autoplay loop muted playsinline>
-          <source src = {backgroundVideo} type='video/mp4' />
-          Your browser does not support the video tag.
-        </video>
+      {isMobile ? (
+          <img className='background-image' src={backgroundImage} alt="Background" /> // Show image for mobile devices
+        ) : (
+          <video className='video-background' autoplay loop muted playsinline>
+            <source src = {backgroundVideo} type='video/mp4' />
+            Your browser does not support the video tag.
+          </video>
+        )}
       </div>
       <Header cart={cart} style={{position: 'sticky', top: '0', zIndex: 1000}} />
       <BrandName />
