@@ -292,6 +292,10 @@ h3 {
         display: none;
     }
 
+    .beat-share {
+        width: 30%;
+    }
+
     .share-price-container {
         display: none;
     }
@@ -314,5 +318,9 @@ h3 {
 
     .sticky-waveform.minimized {
         transform: translateY(calc(100% - 25px));
+    }
+
+    .arrow-button {
+        top: -50px;
     }
 }

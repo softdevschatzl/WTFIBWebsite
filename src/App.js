@@ -55,7 +55,7 @@ function App() {
       {isMobile ? (
           <img className='background-image' src={backgroundImage} alt="Background" /> // Show image for mobile devices
         ) : (
-          <video className='video-background' autoplay loop muted playsinline>
+          <video className='video-background' autoPlay loop muted playsInline>
             <source src = {backgroundVideo} type='video/mp4' />
             Your browser does not support the video tag.
           </video>
