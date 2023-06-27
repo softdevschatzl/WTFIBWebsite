@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/WTFIBWebsite/static/css/main.f3dc813c.css",
-    "main.js": "/WTFIBWebsite/static/js/main.368469aa.js",
+    "main.css": "/WTFIBWebsite/static/css/main.d8905cf0.css",
+    "main.js": "/WTFIBWebsite/static/js/main.a490b960.js",
     "static/js/787.28cb0dcd.chunk.js": "/WTFIBWebsite/static/js/787.28cb0dcd.chunk.js",
+    "static/media/brand-background.mp4": "/WTFIBWebsite/static/media/brand-background.1a91cb3b32a539842dba.mp4",
     "static/media/H20_194BPM.mp3": "/WTFIBWebsite/static/media/H20_194BPM.914d0fccc25092eac29e.mp3",
     "static/media/Manic_182BPM.mp3": "/WTFIBWebsite/static/media/Manic_182BPM.7e3e301a2d78618bcae7.mp3",
     "static/media/Cerberus_188BPM.mp3": "/WTFIBWebsite/static/media/Cerberus_188BPM.1bd81733902f7a301eee.mp3",
     "static/media/AbsurdWorldDemoRegular.ttf": "/WTFIBWebsite/static/media/AbsurdWorldDemoRegular.b8341544dc2569180009.ttf",
+    "static/media/background.jpg": "/WTFIBWebsite/static/media/background.6692db73861538516a20.jpg",
     "static/media/SummerLight-lrAX.otf": "/WTFIBWebsite/static/media/SummerLight-lrAX.08e2d93dd1d5ac6a0df5.otf",
     "static/media/instagramlogo.png": "/WTFIBWebsite/static/media/instagramlogo.5dbf3b974f8c74b45c00.png",
     "static/media/WTFlogo.jpeg": "/WTFIBWebsite/static/media/WTFlogo.97626566d369d5969886.jpeg",
@@ -22,12 +24,12 @@
     "static/media/forward-solid.svg": "/WTFIBWebsite/static/media/forward-solid.9a8a5c69e12f8513349ce88fb9e1f217.svg",
     "static/media/pause-solid.svg": "/WTFIBWebsite/static/media/pause-solid.8f2b2e2b2bfe6385b82f36ba16e275c1.svg",
     "static/media/play-solid.svg": "/WTFIBWebsite/static/media/play-solid.457675025692cbb949620786ae879717.svg",
-    "main.f3dc813c.css.map": "/WTFIBWebsite/static/css/main.f3dc813c.css.map",
-    "main.368469aa.js.map": "/WTFIBWebsite/static/js/main.368469aa.js.map",
+    "main.d8905cf0.css.map": "/WTFIBWebsite/static/css/main.d8905cf0.css.map",
+    "main.a490b960.js.map": "/WTFIBWebsite/static/js/main.a490b960.js.map",
     "787.28cb0dcd.chunk.js.map": "/WTFIBWebsite/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f3dc813c.css",
-    "static/js/main.368469aa.js"
+    "static/css/main.d8905cf0.css",
+    "static/js/main.a490b960.js"
   ]
 }
