@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import shareIcon from '../images/share-solid.svg';
 import WaveSurfer from 'wavesurfer.js';
-import upArrows from '../images/uparrow.png';
 import fastForward from '../images/forward-solid.svg';
 import play from '../images/play-solid.svg';
 import pause from '../images/pause-solid.svg';

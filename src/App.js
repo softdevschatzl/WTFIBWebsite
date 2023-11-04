@@ -17,6 +17,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const clearCart = () => {
+    console.log("Clearing cart...");
     setCart([]);
   };
 
@@ -61,7 +62,7 @@ function App() {
           </video>
         )}
       </div>
-      <Header cart={cart} style={{position: 'sticky', top: '0', zIndex: 1000}} />
+      <Header cart={cart} clearCart = {clearCart} style={{position: 'sticky', top: '0', zIndex: 1000}} />
       <BrandName />
       <WTFIBeats setCart={setCart} clearCart={clearCart} />
       <Pricing />

@@ -107,9 +107,11 @@ const Header = (props) => {
       </nav>
       <div className="cart-container" onClick={toggleCartVisibility} ref={cartIconRef}>
         <FontAwesomeIcon icon={faShoppingCart} className="header-cart-icon" />
-        <Cart cart={props.cart} className={`header-cart-dropdown ${cartVisible ? 'visible' : ''}`} 
-        clearCart = {props.clearCart} 
-        ref={cartRef} />
+        <Cart cart = {props.cart} 
+          className = {`header-cart-dropdown ${cartVisible ? 'visible' : ''}`} 
+          clearCart = {props.clearCart} 
+          ref = {cartRef} 
+        />
       </div>
     </header>
   );
@@ -138,9 +140,11 @@ const Cart = forwardRef(({ cart, className, clearCart }, ref) => {
           </li>
         ))}
       </ul>
-      <p className="header-cart-total">Subtotal: ${totalPrice}</p>
       <button className='header-cart-checkout'>Checkout</button>
-      <button className='header-cart-clear' onClick={clearCart}>Clear Cart</button>
+      <button className='header-cart-clear' onClick={(e) => { 
+        e.stopPropagation(); 
+        clearCart(); 
+        }}>Clear Cart</button>
     </div>
   );
 });
